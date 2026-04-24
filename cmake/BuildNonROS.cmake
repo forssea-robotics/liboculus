@@ -13,15 +13,17 @@ if(DEFINED ENV{FETCH_SPDLOG})
 
     include(FetchContent)
     FetchContent_Declare(
-      fmt
-      GIT_REPOSITORY https://github.com/fmtlib/fmt
-      GIT_TAG        407c905e45ad75fc29bf0f9bb7c5c2fd3475976f) # 12.1.0
+        fmt
+        GIT_REPOSITORY https://github.com/fmtlib/fmt
+        GIT_TAG 407c905e45ad75fc29bf0f9bb7c5c2fd3475976f
+    ) # 12.1.0
     FetchContent_MakeAvailable(fmt)
 
     FetchContent_Declare(
-      spdlog
-      GIT_REPOSITORY https://github.com/gabime/spdlog
-      GIT_TAG        79524ddd08a4ec981b7fea76afd08ee05f83755d) # 1.17.0
+        spdlog
+        GIT_REPOSITORY https://github.com/gabime/spdlog
+        GIT_TAG 79524ddd08a4ec981b7fea76afd08ee05f83755d
+    ) # 1.17.0
     FetchContent_MakeAvailable(spdlog)
 endif()
 
