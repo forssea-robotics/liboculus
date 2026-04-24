@@ -62,10 +62,7 @@ make
 
 ## Logging
 
-> [!NOTE] [fips](http://floooh.github.io/fips/) support has been removed from this version.
-> [!NOTE] The dependency on [g3log](https://github.com/KjellKod/g3log) has been removed.
-
-Internally the library uses [spdlog](https://github.com/gabime/spdlog).  By default logger `"liboculus"` does not have any registered sinks and does not output to the console.
+Internally the library uses [spdlog](https://github.com/gabime/spdlog).  The library's logger does not have any registered sinks by default and will not output to the console.
 
 If the calling application uses `spdlog`, either the library's logger can be reset to the default logger:
 
