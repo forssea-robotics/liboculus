@@ -170,46 +170,46 @@ template <typename Ping_t>
 std::vector<std::string>
 SimplePingResult<Ping_t>::dump(std::vector<std::string> &vec) const {
   // ostr << "--------------";
-  auto vout = SimpleFireMsg_t::dump(vec);
+  SimpleFireMsg_t::dump(vec);
 
-  vout.push_back(fmt::format("          Ping ID: {}", this->ping()->pingId));
-  vout.push_back(fmt::format("           Status: {}", this->ping()->status));
-  vout.push_back(
+  vec.push_back(fmt::format("          Ping ID: {}", this->ping()->pingId));
+  vec.push_back(fmt::format("           Status: {}", this->ping()->status));
+  vec.push_back(
       fmt::format("  Ping start time: {}", this->ping()->pingStartTime));
 
-  vout.push_back(fmt::format("        Frequency: {}", this->ping()->frequency));
-  vout.push_back(
+  vec.push_back(fmt::format("        Frequency: {}", this->ping()->frequency));
+  vec.push_back(
       fmt::format("      Temperature: {}", this->ping()->temperature));
-  vout.push_back(fmt::format("         Pressure: {}", this->ping()->pressure));
-  vout.push_back(
+  vec.push_back(fmt::format("         Pressure: {}", this->ping()->pressure));
+  vec.push_back(
       fmt::format("Spd of sound used: {}", this->ping()->speedOfSoundUsed));
-  vout.push_back(
+  vec.push_back(
       fmt::format(" Range resolution: {} m", this->ping()->rangeResolution));
 
   if (this->flags().getRangeAsMeters()) {
-    vout.push_back(
+    vec.push_back(
         fmt::format("   Calc range: {} m",
                     this->ping()->rangeResolution * this->ping()->nRanges));
     //   ostr <<
     //              <<  << " m";
   } else {
-    vout.push_back(
+    vec.push_back(
         fmt::format("   Pct range: {}",
                     this->ping()->rangeResolution * this->ping()->nRanges));
   }
 
-  vout.push_back(fmt::format("       Num ranges: {}", this->ping()->nRanges));
-  vout.push_back(fmt::format("        Num beams: {}", this->ping()->nBeams));
+  vec.push_back(fmt::format("       Num ranges: {}", this->ping()->nRanges));
+  vec.push_back(fmt::format("        Num beams: {}", this->ping()->nBeams));
 
-  vout.push_back(fmt::format("    Azimuth range: {} - {}", bearings().front(),
+  vec.push_back(fmt::format("    Azimuth range: {} - {}", bearings().front(),
                              bearings().back()));
 
-  vout.push_back(fmt::format("       Image size: {}", this->ping()->imageSize));
-  vout.push_back(
+  vec.push_back(fmt::format("       Image size: {}", this->ping()->imageSize));
+  vec.push_back(
       fmt::format("     Image offset: {}", this->ping()->imageOffset));
-  vout.push_back(fmt::format("        Data size: {}",
+  vec.push_back(fmt::format("        Data size: {}",
                              DataSizeToString(this->ping()->dataSize)));
-  vout.push_back(
+  vec.push_back(
       fmt::format("     Message size: {}", this->ping()->messageSize));
 
   // ostr << "--------------";
