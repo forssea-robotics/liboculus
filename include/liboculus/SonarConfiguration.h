@@ -68,6 +68,7 @@ public:
   DataSizeType getDataSize() const { return _dataSize; }
 
   SonarConfiguration &setRange(double input);
+  float getRange() const { return _rangeInMeters; }
 
   SonarConfiguration &sendRangeAsMeters(bool v);
   SonarConfiguration &sendRangeAsMeters() { return sendRangeAsMeters(true); }
