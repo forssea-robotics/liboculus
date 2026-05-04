@@ -202,13 +202,13 @@ SimplePingResult<Ping_t>::dump(std::vector<std::string> &vec) const {
   vec.push_back(fmt::format("        Num beams: {}", this->ping()->nBeams));
 
   vec.push_back(fmt::format("    Azimuth range: {} - {}", bearings().front(),
-                             bearings().back()));
+                            bearings().back()));
 
   vec.push_back(fmt::format("       Image size: {}", this->ping()->imageSize));
   vec.push_back(
       fmt::format("     Image offset: {}", this->ping()->imageOffset));
   vec.push_back(fmt::format("        Data size: {}",
-                             DataSizeToString(this->ping()->dataSize)));
+                            DataSizeToString(this->ping()->dataSize)));
   vec.push_back(
       fmt::format("     Message size: {}", this->ping()->messageSize));
 
