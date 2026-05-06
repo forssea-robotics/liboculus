@@ -125,3 +125,7 @@ install(
 
 install(DIRECTORY include/${PROJECT_NAME}/
     DESTINATION include/${PROJECT_NAME})
+
+install(TARGETS oculus
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+)
